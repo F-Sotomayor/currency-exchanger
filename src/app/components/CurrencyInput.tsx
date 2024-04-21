@@ -12,16 +12,16 @@ export default function CurrencyInput({
   onChangeSelect,
 }: ICurrencyInput) {
     const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = parseFloat(e.target.value); // Convertir a número
+        const newValue = parseFloat(e.target.value)
         if (onChangeText) {
-          onChangeText(newValue); // Pasar el valor numérico
+          onChangeText(newValue); 
         }
       };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (onChangeSelect) {
       const value = e.target.value;
-      onChangeSelect(value); // Trigger the select input change handler
+      onChangeSelect(value); 
     }
   };
 
@@ -33,7 +33,7 @@ export default function CurrencyInput({
         min={1}
           type="number"
           value={inputValue}
-          onChange={handleTextChange} // Correct `onChange` for text input
+          onChange={handleTextChange}
         />
       ) : (
         <select onChange={handleSelectChange} value={value}>

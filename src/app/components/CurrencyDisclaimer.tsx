@@ -1,4 +1,3 @@
-// CurrencyDisclaimer.tsx
 export default function CurrencyDisclaimer() {
     return (
       <div className="legal-information">

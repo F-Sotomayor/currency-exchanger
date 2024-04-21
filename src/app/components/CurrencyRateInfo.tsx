@@ -1,4 +1,3 @@
-// CurrencyRateInfo.tsx
 interface CurrencyRateInfoProps {
     dataFrom?: { label: string };
     dataTo?: { label: string };

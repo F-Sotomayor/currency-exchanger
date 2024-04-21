@@ -1,4 +1,3 @@
-// CurrencyLastUpdated.tsx
 interface CurrencyLastUpdatedProps {
     dataFrom?: { label: string };
     dataTo?: { label: string };

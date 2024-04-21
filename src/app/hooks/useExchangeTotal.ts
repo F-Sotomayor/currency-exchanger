@@ -1,4 +1,3 @@
-// useExchangeTotal.ts
 import { useEffect, useState } from "react";
 import { ICurrencyRates } from "../types/types";
 
