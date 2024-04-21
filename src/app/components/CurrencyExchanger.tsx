@@ -1,9 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
 import CurrencyInput from "./CurrencyInput";
 import ExchangeButton from "../assets/icons/exchange-button.svg";
 import Image from "next/image";
-import { ICurrencyRates } from "../types/types";
+import { useState } from "react";
+import CurrencyRateInfo from "./CurrencyRateInfo";
+import CurrencyDisclaimer from "./CurrencyDisclaimer";
+import CurrencyLastUpdated from "./CurrencyLastUpdated";
+import useExchangeRates from "../hooks/useExchangeRates";
+import useExchangeTotal from "../hooks/useExchangeTotal";
 
 export default function CurrencyExchanger({
   currencies,
@@ -13,53 +17,21 @@ export default function CurrencyExchanger({
   const [amount, setAmount] = useState(1);
   const [from, setFrom] = useState<string>("USD");
   const [to, setTo] = useState<string>("EUR");
-  const [ratesFromCurrency, setRatesFromCurrency] =
-    useState<ICurrencyRates[]>();
-  const [exchangeTotal, setExchangeTotal] = useState<number>(0);
-  const handleFromChange = (newCurrency: string) => {
-    setFrom(newCurrency);
-  };
 
-  const handleToChange = (newCurrency: string) => {
-    setTo(newCurrency);
-  };
+  const ratesFromCurrency = useExchangeRates(from);
+  const exchangeTotal = useExchangeTotal(amount, ratesFromCurrency, to);
 
-  const handleTextChange = (newValue: number) => {
-    setAmount(newValue); // Correcto para `number`
-  };
+  const handleTextChange = (newValue: number) => setAmount(newValue);
+
+  const handleFromChange = (newCurrency: string) => setFrom(newCurrency);
+
+  const handleToChange = (newCurrency: string) => setTo(newCurrency);
 
   const handleSwapCurrencies = () => {
-    const fromDraft = from;
-    const toDraft = to;
-    setFrom(toDraft);
-    setTo(fromDraft);
+    const temp = from;
+    setFrom(to);
+    setTo(temp);
   };
-
-  useEffect(() => {
-    const ratesFromCurrency = async () => {
-      await fetch(`https://api.vatcomply.com/rates?base=${from}`)
-        .then((response) => response.json())
-        .then((data) => {
-          const formattedData = Object.entries(data.rates).map(
-            ([code, rate]) => ({
-              code,
-              rate: Number(rate),
-            })
-          );
-          setRatesFromCurrency(formattedData);
-        });
-    };
-    ratesFromCurrency();
-  }, [from]);
-
-  useEffect(() => {
-    const filteredRate = ratesFromCurrency?.filter(
-      (currencies) => currencies.code === to
-    );
-    if (filteredRate) {
-      setExchangeTotal(filteredRate[0].rate * amount);
-    }
-  }, [amount, ratesFromCurrency, to, from]);
 
   const dataFrom = currencies.find((currency) => currency.value === from);
   const dataTo = currencies.find((currency) => currency.value === to);
@@ -68,8 +40,7 @@ export default function CurrencyExchanger({
   return (
     <div className="currency-exchange-container">
       <h1>
-        {amount} {dataFrom?.label} to {dataTo?.label} - Convert{" "}
-        {dataFrom?.label}s to {dataTo?.label}s
+        {amount} {dataFrom?.label} converts to {exchangeTotal.toFixed(4)} {dataTo?.label}s
       </h1>
       <div className="exchanger-wrapper">
         <div className="inputs-container">
@@ -101,36 +72,19 @@ export default function CurrencyExchanger({
             value={to}
           />
         </div>
-        <div className="rates-container">
-          <div className="rates-data-container">
-            <div className="rate-information">
-              <p>1 {dataFrom?.label} =</p>
-              <p>
-                {rate?.rate} {dataTo?.label}
-              </p>
-            </div>
-            <div className="rate-disclaimer">
-              <p>
-                1 {from} = {rate?.rate} {to}
-              </p>
-            </div>
-          </div>
-          <div className="legal-information">
-            <div className="legal-box">
-              <div>
-                We use the mid-market rate for our Converter. This is for
-                informational purposes only. You won’t receive this rate when
-                sending money.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="last-updated">
-          <p>
-            {dataFrom?.label} to {dataTo?.label} conversion — Last updated Dec
-            15, 2022, 19:17 UTC
-          </p>
-        </div>
+       <div className="rates-container">
+       <CurrencyRateInfo
+          dataFrom={dataFrom}
+          dataTo={dataTo}
+          rate={rate?.rate}
+        />
+        <CurrencyDisclaimer />
+       </div>
+        <CurrencyLastUpdated
+          dataFrom={dataFrom}
+          dataTo={dataTo}
+          lastUpdated="Dec 15, 2022, 19:17 UTC"
+        />
       </div>
     </div>
   );
