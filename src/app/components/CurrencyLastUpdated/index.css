@@ -1,0 +1,10 @@
+.last-updated {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex: 0.2;
+    width: 100%;
+    color: gray;
+    padding: 8px;
+  }

@@ -1,3 +1,5 @@
+import "./index.css"
+
 interface CurrencyRateInfoProps {
     dataFrom?: { label: string };
     dataTo?: { label: string };

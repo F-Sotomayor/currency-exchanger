@@ -1,7 +1,7 @@
 "use client";
 
-import { ICurrencyInput } from "../types/types";
-
+import { ICurrencyInput } from "../../types/types";
+import "./index.css"
 export default function CurrencyInput({
   inputType,
   label,

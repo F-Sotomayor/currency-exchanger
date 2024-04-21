@@ -1,0 +1,17 @@
+.legal-information {
+    display: flex;
+    align-items: flex-end;
+    flex: 0.7;
+  }
+  
+  .legal-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #E8F3FF;
+    height: 100px;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+  }

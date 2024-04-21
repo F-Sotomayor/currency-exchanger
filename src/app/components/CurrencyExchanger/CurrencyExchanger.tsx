@@ -1,13 +1,14 @@
 "use client";
-import CurrencyInput from "./CurrencyInput";
-import ExchangeButton from "../assets/icons/exchange-button.svg";
+import CurrencyInput from "../CurrencyInput/CurrencyInput";
+import ExchangeButton from "../../assets/icons/exchange-button.svg";
 import Image from "next/image";
 import { useState } from "react";
-import CurrencyRateInfo from "./CurrencyRateInfo";
-import CurrencyDisclaimer from "./CurrencyDisclaimer";
-import CurrencyLastUpdated from "./CurrencyLastUpdated";
-import useExchangeRates from "../hooks/useExchangeRates";
-import useExchangeTotal from "../hooks/useExchangeTotal";
+import CurrencyRateInfo from "../CurrencyRateInfo/CurrencyRateInfo";
+import CurrencyDisclaimer from "../CurrencyDisclaimer/CurrencyDisclaimer";
+import CurrencyLastUpdated from "../CurrencyLastUpdated/CurrencyLastUpdated";
+import useExchangeRates from "../../hooks/useExchangeRates";
+import useExchangeTotal from "../../hooks/useExchangeTotal";
+import "./index.css"
 
 export default function CurrencyExchanger({
   currencies,

@@ -1,4 +1,4 @@
-import CurrencyExchanger from "./components/CurrencyExchanger";
+import CurrencyExchanger from "./components/CurrencyExchanger/CurrencyExchanger";
 import transformToCurrencyArray from "./utils/transformToCurrencyArray";
 
 async function getCurrencies() {

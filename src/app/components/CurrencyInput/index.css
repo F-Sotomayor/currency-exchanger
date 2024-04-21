@@ -1,0 +1,35 @@
+
+.currency-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: calc(100vw / 5);
+  }
+  
+  .currency-input input {
+    margin-top: 8px;
+    border: 1px solid rgb(211, 211, 211);
+    height: 32px;
+    padding: 4px;
+    font-weight: 700;
+    width: 90%;
+  }
+  
+  .currency-input input:focus {
+    outline: 1px solid #1A8DFF  
+  }
+  
+  .currency-input select {
+    margin-top: 8px;
+    border: 1px solid rgb(211, 211, 211);
+    height: 32px;
+    padding: 4px;
+    font-weight: 700;
+    width: 90%;
+  }
+  
+  .currency-input select:focus {
+    outline: 1px solid #1A8DFF  
+  }
