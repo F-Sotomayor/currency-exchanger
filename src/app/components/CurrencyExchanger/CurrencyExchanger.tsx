@@ -40,7 +40,7 @@ export default function CurrencyExchanger({
 
   return (
     <div className="currency-exchange-container">
-      <h1>
+      <h1 style={{textAlign: "center"}}>
         {amount} {dataFrom?.label} converts to {exchangeTotal.toFixed(4)} {dataTo?.label}s
       </h1>
       <div className="exchanger-wrapper">

@@ -7,6 +7,12 @@
     width: auto;
     min-width: calc(100vw / 5);
   }
+
+  .currency-input label {
+    width: 100%;
+    padding-left: 18px;
+    font-weight: 700;
+  }
   
   .currency-input input {
     margin-top: 8px;
@@ -32,4 +38,14 @@
   
   .currency-input select:focus {
     outline: 1px solid #1A8DFF  
+  }
+
+  @media (max-width: 500px) and (max-height: 800px) {
+    .currency-input label {
+      width: 100%;
+      padding-left: 8px;
+    }
+    .currency-input select {
+      width: 100%
+    }
   }

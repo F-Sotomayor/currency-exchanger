@@ -8,3 +8,12 @@
     color: gray;
     padding: 8px;
   }
+
+  @media (max-width: 500px) and (max-height: 800px) {
+    .last-updated {
+      font-size: 12px;
+      height: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+  }

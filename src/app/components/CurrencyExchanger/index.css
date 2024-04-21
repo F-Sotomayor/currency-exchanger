@@ -30,6 +30,10 @@
     padding-top: 5vh;
     position: relative;
   }
+
+  .currency-exchange-container h1 {
+    font-size: 24px;
+  }
   
   .exchanger-wrapper {
     display: flex;
@@ -71,4 +75,42 @@
     justify-content: center;
     width: 80px;
     transform: translateY(12px);
+  }
+
+  @media (max-width: 500px) and (max-height: 800px) {
+    .exchanger-wrapper {
+      padding: 8px
+    }
+    .currency-exchange-container {
+      flex-direction: column;
+      align-items: center;
+      height: 35vh;
+      justify-content: flex-start;
+    }
+    .exchanger-wrapper {
+      top: 20vh;
+    }
+
+    .inputs-container {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+      height: auto
+    }
+
+    .amount-wrapper {
+      margin-bottom: 12px;
+    }
+    .from-to-wrapper {
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left: 8px;
+    }
+    .currency-icon {
+      transform: none;
+      height: 80px;
+      justify-content: flex-start;
+    }
   }

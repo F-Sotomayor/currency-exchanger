@@ -12,12 +12,12 @@ interface CurrencyRateInfoProps {
         <div className="rate-information">
           <p>1 {dataFrom?.label} =</p>
           <p>
-            {rate} {dataTo?.label}
+            {rate?.toFixed(4)} {dataTo?.label}
           </p>
         </div>
         <div className="rate-disclaimer">
           <p>
-            1 {dataFrom?.label} = {rate} {dataTo?.label}
+            1 {dataFrom?.label} = {rate?.toFixed(4)} {dataTo?.label}
           </p>
         </div>
       </div>
