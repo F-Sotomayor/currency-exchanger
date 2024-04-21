@@ -27,7 +27,7 @@ export default function CurrencyInput({
 
   return (
     <div className="currency-input">
-      <label>{label}</label>
+      <label style={{width: "100%", paddingLeft: "18px"}}>{label}</label>
       {inputType === "text" ? (
         <input
         min={1}

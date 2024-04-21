@@ -44,13 +44,16 @@ export default function CurrencyExchanger({
       </h1>
       <div className="exchanger-wrapper">
         <div className="inputs-container">
+          <div className="amount-wrapper">
           <CurrencyInput
             inputType="text"
             label="Amount"
             inputValue={amount}
             onChangeText={handleTextChange}
           />
-          <CurrencyInput
+          </div>
+       <div className="from-to-wrapper">
+       <CurrencyInput
             inputType="select"
             label="From"
             currencies={currencies}
@@ -72,6 +75,7 @@ export default function CurrencyExchanger({
             value={to}
           />
         </div>
+       </div>
        <div className="rates-container">
        <CurrencyRateInfo
           dataFrom={dataFrom}
