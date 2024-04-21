@@ -14,6 +14,7 @@ export interface Currency {
     label: string;
     inputValue?: number;
     currencies?: { value: string; label: string }[];
+    value?: string
     onChangeText?: (newValue: number) => void; // For text input
     onChangeSelect?: (selectedValue: string) => void; // For select input
   }

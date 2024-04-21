@@ -22,6 +22,11 @@
   padding-left: 40px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .currency-exchange-container {
   display: flex;
   justify-content: center;
@@ -34,6 +39,7 @@
 
 .exchanger-wrapper {
   display: flex;
+  flex-direction: column;
   background-color: white;
   position:absolute;
   z-index: 10;
@@ -92,4 +98,59 @@
 .currency-icon {
   display: flex;
   align-items: center;
+}
+
+.rate-information {
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.rate-disclaimer {
+  font-weight: 300;
+  color: rgb(155, 155, 155);
+  font-size: 14px;
+}
+
+.rates-container {
+display: flex;
+flex: 1;
+width: 100%;
+margin-top: 60px;
+padding: 12px;
+}
+
+.rates-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0.6
+}
+
+.legal-information {
+  display: flex;
+  align-items: flex-end;
+  flex: 0.4;
+}
+
+.legal-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #E8F3FF;
+  height: 90px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px;
+}
+
+.last-updated {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 0.2;
+  width: 100%;
+  color: gray;
 }

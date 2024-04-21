@@ -7,6 +7,7 @@ export default function CurrencyInput({
   label,
   inputValue,
   currencies,
+  value,
   onChangeText,
   onChangeSelect,
 }: ICurrencyInput) {
@@ -35,7 +36,7 @@ export default function CurrencyInput({
           onChange={handleTextChange} // Correct `onChange` for text input
         />
       ) : (
-        <select onChange={handleSelectChange}>
+        <select onChange={handleSelectChange} value={value}>
           {currencies?.map((currency) => (
             <option key={currency.value} value={currency.value}>
               {currency.label}
