@@ -77,7 +77,7 @@
     transform: translateY(12px);
   }
 
-  @media (max-width: 500px) and (max-height: 800px) {
+  @media (max-width: 500px) and (max-height: 1000px) {
     .exchanger-wrapper {
       padding: 8px
     }
@@ -100,13 +100,20 @@
 
     .amount-wrapper {
       margin-bottom: 12px;
+      padding-left: 8px;
+    }
+
+    .amount-wrapper input {
+      width: 180px;
     }
     .from-to-wrapper {
-      width: 100%;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       padding-left: 8px;
+    }
+    .from-to-wrapper select {
+      width: 180px;
     }
     .currency-icon {
       transform: none;

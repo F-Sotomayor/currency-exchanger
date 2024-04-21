@@ -10,12 +10,13 @@ export interface Currency {
   }
   
   export interface ICurrencyInput {
-    inputType: "text" | "select";
+    inputType: "number" | "select";
     label: string;
     inputValue?: number;
     currencies?: { value: string; label: string }[];
     value?: string
-    onChangeText?: (newValue: number) => void; // For text input
+    currencySymbol?: string
+    onAmountChange?: (newValue: number) => void; // For text input
     onChangeSelect?: (selectedValue: string) => void; // For select input
   }
 

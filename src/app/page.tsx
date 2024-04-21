@@ -10,6 +10,7 @@ async function getCurrencies() {
 
 export default async function Home() {
   const currencies = await getCurrencies();
+  console.log(currencies)
   return (
       <CurrencyExchanger currencies={currencies} />
     

@@ -25,7 +25,7 @@
   flex: 0.6;
 }
 
-@media (max-width: 500px) and (max-height: 800px) {
+@media (max-width: 500px) and (max-height: 1000px) {
   .rates-data-container {
     flex: 1;
   }

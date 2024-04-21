@@ -39,8 +39,9 @@
   .currency-input select:focus {
     outline: 1px solid #1A8DFF  
   }
+  
 
-  @media (max-width: 500px) and (max-height: 800px) {
+  @media (max-width: 500px) and (max-height: 1000px) {
     .currency-input label {
       width: 100%;
       padding-left: 8px;

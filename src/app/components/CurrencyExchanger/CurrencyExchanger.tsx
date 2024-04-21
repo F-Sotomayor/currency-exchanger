@@ -22,7 +22,7 @@ export default function CurrencyExchanger({
   const ratesFromCurrency = useExchangeRates(from);
   const exchangeTotal = useExchangeTotal(amount, ratesFromCurrency, to);
 
-  const handleTextChange = (newValue: number) => setAmount(newValue);
+  const handleAmountChange = (newValue: number) => setAmount(newValue);
 
   const handleFromChange = (newCurrency: string) => setFrom(newCurrency);
 
@@ -37,8 +37,8 @@ export default function CurrencyExchanger({
   const dataFrom = currencies.find((currency) => currency.value === from);
   const dataTo = currencies.find((currency) => currency.value === to);
   const rate = ratesFromCurrency?.find((rates) => rates.code === to);
-
   return (
+
     <div className="currency-exchange-container">
       <h1 style={{textAlign: "center"}}>
         {amount} {dataFrom?.label} converts to {exchangeTotal.toFixed(4)} {dataTo?.label}s
@@ -47,10 +47,11 @@ export default function CurrencyExchanger({
         <div className="inputs-container">
           <div className="amount-wrapper">
           <CurrencyInput
-            inputType="text"
+            inputType="number"
             label="Amount"
             inputValue={amount}
-            onChangeText={handleTextChange}
+            onAmountChange={handleAmountChange}
+            currencySymbol={dataFrom?.symbol}
           />
           </div>
        <div className="from-to-wrapper">

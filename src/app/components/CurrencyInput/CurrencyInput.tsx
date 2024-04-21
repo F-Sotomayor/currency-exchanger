@@ -1,40 +1,42 @@
 "use client";
 
 import { ICurrencyInput } from "../../types/types";
-import "./index.css"
+import "./index.css";
 export default function CurrencyInput({
   inputType,
   label,
   inputValue,
   currencies,
   value,
-  onChangeText,
+  currencySymbol,
+  onAmountChange,
   onChangeSelect,
 }: ICurrencyInput) {
-    const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = parseFloat(e.target.value)
-        if (onChangeText) {
-          onChangeText(newValue); 
-        }
-      };
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value) < 1) return 1;
+    const newValue = parseFloat(e.target.value);
+    if (onAmountChange) {
+      onAmountChange(newValue);
+    }
+  };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (onChangeSelect) {
       const value = e.target.value;
-      onChangeSelect(value); 
+      onChangeSelect(value);
     }
   };
 
   return (
     <div className="currency-input">
       <label>{label}</label>
-      {inputType === "text" ? (
+      {inputType === "number" ? (
         <input
-        min={1}
+          min={1}
           type="number"
           value={inputValue}
-          onChange={handleTextChange}
-        />
+          onChange={handleAmountChange}
+        ></input>
       ) : (
         <select onChange={handleSelectChange} value={value}>
           {currencies?.map((currency) => (
