@@ -12,7 +12,7 @@ export interface SelectOption {
 export interface ICurrencyInput {
   inputType: "number" | "select";
   label: string;
-  inputValue: string;
+  inputValue?: number;
   currencies?: { value: string; label: string }[];
   value?: string;
   currencySymbol?: string;

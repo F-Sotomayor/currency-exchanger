@@ -51,7 +51,7 @@ export default function CurrencyExchanger({
             <CurrencyInput
               inputType="number"
               label="Amount"
-              inputValue={String(dataFrom ? `${dataFrom.symbol}  ${amount}` : amount)}
+              inputValue={amount}
               onAmountChange={handleAmountChange}
               currencySymbol={dataFrom?.symbol}
             />
@@ -63,7 +63,6 @@ export default function CurrencyExchanger({
               currencies={currencies}
               onChangeSelect={handleFromChange}
               value={from}
-              inputValue=""
             />
             <div className="currency-icon">
               <Image
@@ -78,7 +77,6 @@ export default function CurrencyExchanger({
               currencies={currencies}
               onChangeSelect={handleToChange}
               value={to}
-              inputValue=""
             />
           </div>
         </div>

@@ -20,7 +20,8 @@
     height: 32px;
     padding: 4px;
     font-weight: 700;
-    width: 90%;
+    width: 100%;
+    padding-left: 24px;
   }
   
   .currency-input input:focus {
@@ -49,4 +50,18 @@
     .currency-input select {
       width: 100%
     }
+  }
+
+  .wrapper-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+  }
+
+  .wrapper-input span {
+      width: auto;
+      position: absolute;
+      top: calc((32px / 2) - 2px);
+      left: 6px;
   }
