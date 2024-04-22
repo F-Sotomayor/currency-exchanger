@@ -8,12 +8,12 @@ export default function CurrencyInput({
   inputValue,
   currencies,
   value,
-  currencySymbol,
   onAmountChange,
   onChangeSelect,
 }: ICurrencyInput) {
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (Number(e.target.value) < 1) return 1;
+    if (e.target.value === "") return 1;
     const newValue = parseFloat(e.target.value);
     if (onAmountChange) {
       onAmountChange(newValue);
@@ -33,7 +33,7 @@ export default function CurrencyInput({
       {inputType === "number" ? (
         <input
           min={1}
-          type="number"
+          type="text"
           value={inputValue}
           onChange={handleAmountChange}
         ></input>
