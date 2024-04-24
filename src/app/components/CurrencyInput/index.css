@@ -57,6 +57,7 @@
     flex-direction: row;
     align-items: center;
     position: relative;
+    width: 90%;
   }
 
   .wrapper-input span {
