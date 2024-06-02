@@ -1,4 +1,4 @@
-![image](https://github.com/F-Sotomayor/currency-exchanger/assets/59397328/133ff071-fd0f-4941-8cfe-977d92b837ec)# Currency Exchanger Project
+# Currency Exchanger Project
 
 This project is a currency exchanger built using Next.js, leveraging the features of version 13 with Server-Side Rendering (SSR). It allows users to convert between different currencies based on the latest exchange rates.
 
